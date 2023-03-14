@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { sm, md, xl } from "../../breakpoints";
 import consultorio from "../../assets/consultorio.png";
 
-const Nosotros = ({ setToggle }) => {
+const Nosotros = ({ setToggle, ecografiasRef }) => {
   return (
-    <NosotrosStyled id="nosotros">
+    <NosotrosStyled>
       <div className="container lg">
         <div className="item item1">
           <div className="imageContainer">
@@ -32,7 +32,7 @@ const Nosotros = ({ setToggle }) => {
           <button onClick={() => setToggle(true)}>Agenda tu hora</button>
         </div>
 
-        <div className="item item3"  id="ecografias">
+        <div className="item item3" ref={ecografiasRef}>
           <h2>Tipos de ecografías</h2>
           <hr />
           <p>
@@ -324,7 +324,7 @@ const NosotrosStyled = styled.section`
     }
 
     .item3 {
-      scroll-margin-top:100px;
+      scroll-margin-top: 100px;
       /* border: solid red; */
       text-align: center;
       display: grid;

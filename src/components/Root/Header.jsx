@@ -9,7 +9,7 @@ import { IoClose } from "react-icons/io5";
 
 // import { TfiMenu } from "react-icons/tfi";
 
-const Header = ({ setToggle }) => {
+const Header = ({ setToggle, ecografiasRef, sucursalesRef, contactoRef }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
@@ -36,13 +36,19 @@ const Header = ({ setToggle }) => {
               <a href="#">Inicio</a>
             </li>
             <li>
-              <a href="#ecografias">Ecografias</a>
+              <a onClick={() => ecografiasRef.current.scrollIntoView()}>
+                Ecografias
+              </a>
             </li>
             <li>
-              <a href="#sucursales">Sucursales</a>
+              <a onClick={() => sucursalesRef.current.scrollIntoView()}>
+                Sucursales
+              </a>
             </li>
             <li>
-              <a href="#contacto">Contacto</a>
+              <a onClick={() => contactoRef.current.scrollIntoView()}>
+                Contacto
+              </a>
             </li>
             <li>
               <Link to={"resultados"}>Resultados</Link>
@@ -134,7 +140,7 @@ const HeaderStyled = styled.header`
           height: 100%;
           /* border:solid; */
           text-align: center;
-          padding:.5rem;
+          padding: 0.5rem;
 
           :hover {
             background-color: #e1e2e779;
@@ -149,6 +155,7 @@ const HeaderStyled = styled.header`
             /* background-color:red; */
             display: grid;
             place-content: center;
+            cursor: pointer;
           }
         }
 

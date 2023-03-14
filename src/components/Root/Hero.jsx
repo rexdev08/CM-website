@@ -3,7 +3,7 @@ import { md } from "../../breakpoints";
 import logoBlanco from "../../assets/logo-transparente-blanco.png";
 import { FaArrowRight } from "react-icons/fa";
 
-const Hero = () => {
+const Hero = ({ CMDeLaTorreref, CMSanMateoRef }) => {
   return (
     <HeroStyled>
       <div className="gridContainer lg">
@@ -18,11 +18,11 @@ const Hero = () => {
             <h4>Agenda tu hora</h4>
             <hr />
             <div className="buttonsContainer">
-              <a href="#CMDeLaTorre">
+              <a onClick={() => CMDeLaTorreref.current.scrollIntoView()}>
                 <FaArrowRight className="arrow" />
                 En Linares
               </a>
-              <a href="#CMSanMateo">
+              <a onClick={() => CMSanMateoRef.current.scrollIntoView()}>
                 <FaArrowRight className="arrow" />
                 En Colbun
               </a>
@@ -105,6 +105,7 @@ const HeroStyled = styled.section`
             align-items: center;
             justify-content: center;
             position: relative;
+            cursor: pointer;
 
             :nth-child(1) {
               background-color: var(--color-secondary);

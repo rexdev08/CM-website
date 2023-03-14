@@ -7,18 +7,33 @@ import PieDePagina from "../components/Root/PieDePagina";
 import Header from "../components/Root/Header";
 import Modal from "../components/Modal";
 import { useState } from "react";
+import { useRef } from "react";
 
 const Root = () => {
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
+  const ecografiasRef = useRef();
+  const sucursalesRef = useRef();
+  const contactoRef = useRef();
+  const CMDeLaTorreref = useRef();
+  const CMSanMateoRef = useRef();
   return (
     <>
-    <Modal estado={toggle} setToggle={setToggle}/>
-      <Header setToggle={setToggle}/>
+      <Modal estado={toggle} setToggle={setToggle} />
+      <Header
+        setToggle={setToggle}
+        ecografiasRef={ecografiasRef}
+        sucursalesRef={sucursalesRef}
+        contactoRef={contactoRef}
+      />
       <MainStyled>
-        <Hero />
-        <Nosotros setToggle={setToggle}/>
-        <Sucursales />
-        <Contacto />
+        <Hero CMDeLaTorreref={CMDeLaTorreref} CMSanMateoRef={CMSanMateoRef} />
+        <Nosotros setToggle={setToggle} ecografiasRef={ecografiasRef} />
+        <Sucursales
+          sucursalesRef={sucursalesRef}
+          CMDeLaTorreref={CMDeLaTorreref}
+          CMSanMateoRef={CMSanMateoRef}
+        />
+        <Contacto contactoRef={contactoRef} />
       </MainStyled>
       <PieDePagina />
     </>

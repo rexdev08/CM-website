@@ -5,9 +5,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
-const Contacto = () => {
+const Contacto = ({ contactoRef }) => {
   return (
-    <ContactoStyled id="contacto">
+    <ContactoStyled ref={contactoRef}>
       <div className="gridContainer md">
         <div className="titleContainer lg">
           <h2>Contacto</h2>
@@ -70,7 +70,7 @@ const Contacto = () => {
 
 const ContactoStyled = styled.section`
   /* background-color: var(--color-fifth); */
-  scroll-margin-top:100px;  
+  scroll-margin-top: 100px;
   width: 100%;
   color: var(--color-primary);
   text-align: center;
