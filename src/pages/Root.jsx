@@ -42,7 +42,7 @@ const Root = () => {
 
 const MainStyled = styled.main`
 	width: 100%;
-	min-height: 100vh;
+	min-height: 100dvh;
 
 	scroll-margin-top: 100px;
 	/* border: red solid; */

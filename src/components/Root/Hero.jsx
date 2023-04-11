@@ -35,7 +35,7 @@ const Hero = ({ CMDeLaTorreref, CMSanMateoRef }) => {
 };
 
 const HeroStyled = styled.section`
-	height: calc(100vh - 4rem);
+	height: calc(100dvh - 4rem);
 	display: grid;
 	place-items: center;
 	/* padding: 2rem; */

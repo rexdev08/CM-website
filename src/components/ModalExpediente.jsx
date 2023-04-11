@@ -81,7 +81,7 @@ const ModalExpediente = ({ showModalExpediente, setShowModalExpediente }) => {
 
 const Overlay = styled.div`
 	width: 100%;
-	min-height: 100vh;
+	min-height: 100dvh;
 	background-color: #ffffff;
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(197%2c 222%2c 249%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c462 C 57.6%2c398.4 172.8%2c155.8 288%2c144 C 403.2%2c132.2 460.8%2c381.8 576%2c403 C 691.2%2c424.2 748.8%2c260.6 864%2c250 C 979.2%2c239.4 1036.8%2c345.2 1152%2c350 C 1267.2%2c354.8 1382.4%2c289.2 1440%2c274L1440 560L0 560z' fill='rgba(87%2c 154%2c 223%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c201 C 96%2c250.6 288%2c487 480%2c449 C 672%2c411 768%2c39.6 960%2c11 C 1152%2c-17.6 1344%2c247 1440%2c306L1440 560L0 560z' fill='rgba(43%2c 84%2c 127%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
 	background-repeat: no-repeat;

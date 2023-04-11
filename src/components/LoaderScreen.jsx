@@ -17,7 +17,7 @@ const LoaderScreen = () => {
 
 const Overlay = styled.div`
 	width: 100%;
-	height: 100vh;
+	height: 100dvh;
 	background-color: #000000c8;
 
 	position: fixed;

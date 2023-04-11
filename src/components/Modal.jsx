@@ -37,7 +37,7 @@ const OverlayStyled = styled.div`
 	left: 0;
 	z-index: 10;
 	width: 100%;
-	height: 100%;
+	height:100dvh;
 	background-color: #06071dde;
 	backdrop-filter: blur(0.3rem);
 	display: flex;

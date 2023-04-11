@@ -26,7 +26,7 @@ const ErrorPage = () => {
 
 const MainStyled = styled.main`
   /* margin-top: 6.25rem; */
-  height: calc(100vh - 8.25rem);
+  height: calc(100dvh - 8.25rem);
   display: grid;
   place-content: center;
   font-size: 2rem;
