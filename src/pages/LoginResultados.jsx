@@ -47,50 +47,48 @@ const LoginResultados = () => {
 			<HeaderStyled setPatient={setPatient} />
 			{!patient && (
 				<Container>
-					<Box>
-						<TextContainer>
-							<H2>Su salud nos importa</H2>
-							<Span>
-								En esta seccion podras ver o descargar los archivos de tus
-								resultados
-							</Span>
-						</TextContainer>
-						<Form onSubmit={handleOnSubmit}>
-							<Link to={"/"}>
-								<Logo src={logoM} alt="" />
-							</Link>
-							<Input
-								required
-								type="text"
-								placeholder="Identificacion sin signos especiales"
-								value={inputsValues.id}
-								name="id"
-								id="id"
-								onChange={handleOnChange}
-								autoFocus
-								autoComplete="off"
-							/>
-							<Input
-								required
-								type="text"
-								placeholder="Codigo de 6 digitos"
-								value={inputsValues.codigo}
-								name="codigo"
-								id="codigo"
-								onChange={handleOnChange}
-								autoComplete="off"
-								minLength={6}
-								maxLength={6}
-							/>
-							<Submit type="submit" value="Ingresar" />
+					<TextContainer>
+						<H2>Su salud nos importa</H2>
+						<Span>
+							En esta seccion podras ver o descargar los archivos de tus
+							resultados
+						</Span>
+					</TextContainer>
+					<Form onSubmit={handleOnSubmit}>
+						<Link to={"/"}>
+							<Logo src={logoM} alt="" />
+						</Link>
+						<Input
+							required
+							type="text"
+							placeholder="Identificacion sin signos especiales"
+							value={inputsValues.id}
+							name="id"
+							id="id"
+							onChange={handleOnChange}
+							autoFocus
+							autoComplete="off"
+						/>
+						<Input
+							required
+							type="text"
+							placeholder="Codigo de 6 digitos"
+							value={inputsValues.codigo}
+							name="codigo"
+							id="codigo"
+							onChange={handleOnChange}
+							autoComplete="off"
+							minLength={6}
+							maxLength={6}
+						/>
+						<Submit type="submit" value="Ingresar" />
 
-							{showHelpText && (
-								<HelpText>
-									Identificacion incorrecta y/o codigo incorrecto
-								</HelpText>
-							)}
-						</Form>
-					</Box>
+						{showHelpText && (
+							<HelpText>
+								Identificacion incorrecta y/o codigo incorrecto
+							</HelpText>
+						)}
+					</Form>
 				</Container>
 			)}
 
@@ -101,14 +99,9 @@ const LoginResultados = () => {
 };
 
 const Container = styled.div`
+	height: 100%;
 	min-height: calc(100dvh - 6rem);
 	background-color: #f2f2f2;
-`;
-
-const Box = styled.div`
-	/* border: solid; */
-	height: calc(100vh - 6rem);
-	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 0.6fr;
 
@@ -116,6 +109,7 @@ const Box = styled.div`
 		grid-template-columns: 1fr;
 	}
 `;
+
 const Form = styled.form`
 	/* border: solid; */
 	background-color: white;
