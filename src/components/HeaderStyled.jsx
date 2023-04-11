@@ -3,70 +3,75 @@ import { lg } from "../breakpoints";
 import logoBlanco from "../assets/logo-transparente-blanco.png";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import { RiLoginBoxFill } from "react-icons/ri";
 
-const HeaderStyled = () => {
-  return (
-    <Header>
-      <nav className="navigation">
-        <ul>
-          <li>
-            <img src={logoBlanco} alt="" />
-          </li>
-          <Link to={"/"}>
-            <li>
-              <FaHome />
-              INICIO
-            </li>
-          </Link>
-        </ul>
-      </nav>
-    </Header>
-  );
+const HeaderStyled = ({ setPatient }) => {
+	return (
+		<Header>
+			<Navigation>
+				<List>
+					<ListItem>
+						<Icon src={logoBlanco} alt="imagen" />
+					</ListItem>
+					<div style={{ display: "flex", height: "100%" }}>
+						<ALink to={"/"}>
+							<ListItem>
+								<FaHome />
+								INICIO
+							</ListItem>
+						</ALink>
+						<ALink onClick={() => setPatient(null)}>
+							<ListItem>
+								<RiLoginBoxFill />
+								LOGIN
+							</ListItem>
+						</ALink>
+					</div>
+				</List>
+			</Navigation>
+		</Header>
+	);
 };
 
 const Header = styled.header`
-  width: 100%;
-  height: 6.25rem;
-  display: flex;
-  justify-content: center;
-  background-color: var(--color-primary);
+	height: 4rem;
+	display: flex;
+	justify-content: center;
+	background-color: var(--color-primary);
+`;
 
-  .navigation {
-    width: 100%;
-    max-width: ${lg};
-    height: 100%;
-    /* background-color: blue; */
-    ul {
-      height: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      /* background-color: green; */
+const Navigation = styled.nav`
+	width: 100%;
+	max-width: ${lg};
+	height: 100%;
+	/* background-color: blue; */
+`;
+const List = styled.ul`
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* background-color: green; */
+`;
+const ALink = styled(Link)`
+	height: 100%;
+	padding: 0.4rem;
+	color: white;
 
-      a {
-        height: 100%;
-        padding: 0.4rem;
-        color: white;
-
-        li {
-          height: 100%;
-          display: flex;
-          align-items: center;
-          gap: 0.2rem;
-          font-size: 1.3rem;
-        }
-
-        :hover {
-          background-color: white;
-          color: var(--color-primary);
-        }
-      }
-    }
-  }
-
-  img {
-    max-width: 150px;
-  }
+	:hover {
+		background-color: white;
+		color: var(--color-primary);
+	}
+`;
+const ListItem = styled.li`
+	height: 100%;
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
+	font-size: 1rem;
+`;
+const Icon = styled.img`
+	max-width: 120px;
 `;
 
 export default HeaderStyled;

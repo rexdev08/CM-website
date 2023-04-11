@@ -33,16 +33,16 @@ const GlobalStyles = createGlobalStyle`
   --fs-small:.8125rem;//13px
   --fs-small-plus:0.9rem;//14px
   --fs-regular:1rem;//16px
-  --fs-medium:1.2rem;//19.2
-  --fs-large:1.875rem;//30px
-  --fs-xl:2rem;//36px
+  --fs-medium:1.1rem;
+  --fs-large:1.4rem;
+  --fs-xl:1.5rem;//36px
 
   --fs-body:var(--fs-small);
   --fs-nav:var(--fs-regular);
   --fs-button:var(--fs-small);
-  --fs-h1:60px;
-  --fs-h2:40px;
-  --fs-h3:30px;
+  --fs-h1:24px;
+  --fs-h2:22px;
+  --fs-h3:20px;
   --fs-h4:20px;
 
   //border-radius
@@ -81,20 +81,20 @@ html{
 //headings
 h1{
   font-size:var(--fs-h1);
-  font-weight:var(--fw-black);
+  font-weight:var(--fw-bold);
 }
 h2{
   font-size:var(--fs-h2);
-  font-weight:var(--fw-black);
+  font-weight:var(--fw-bold);
 }
 h3{
   font-size:var(--fs-h3);
-  font-weight:var(--fw-black);
+  font-weight:var(--fw-bold);
 }
 h4{
   font-size:var(--fs-h4);
   color:var(--color-text-black);
-  font-weight:var(--fw-black);
+  font-weight:var(--fw-bold);
 }
 
 

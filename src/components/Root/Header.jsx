@@ -10,216 +10,214 @@ import { IoClose } from "react-icons/io5";
 // import { TfiMenu } from "react-icons/tfi";
 
 const Header = ({ setToggle, ecografiasRef, sucursalesRef, contactoRef }) => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+	const [toggleMenu, setToggleMenu] = useState(false);
 
-  return (
-    <HeaderStyled show={toggleMenu}>
-      <div className="flexContainer lg">
-        <button
-          className="toggleBtn"
-          onClick={() => setToggleMenu(!toggleMenu)}
-        >
-          {toggleMenu ? (
-            <IoClose className="menuIcon" />
-          ) : (
-            <IoMenu className="menuIcon" />
-          )}
-        </button>
+	return (
+		<HeaderStyled show={toggleMenu}>
+			<div className="flexContainer lg">
+				<button
+					className="toggleBtn"
+					onClick={() => setToggleMenu(!toggleMenu)}
+				>
+					{toggleMenu ? (
+						<IoClose className="menuIcon" />
+					) : (
+						<IoMenu className="menuIcon" />
+					)}
+				</button>
 
-        <div className="logoContainer">
-          <img src={logo} alt="" />
-        </div>
+				<div className="logoContainer">
+					<img src={logo} alt="" />
+				</div>
 
-        <nav className="navigationContainer">
-          <ul>
-            <li>
-              <a href="#">Inicio</a>
-            </li>
-            <li>
-              <a onClick={() => ecografiasRef.current.scrollIntoView()}>
-                Ecografias
-              </a>
-            </li>
-            <li>
-              <a onClick={() => sucursalesRef.current.scrollIntoView()}>
-                Sucursales
-              </a>
-            </li>
-            <li>
-              <a onClick={() => contactoRef.current.scrollIntoView()}>
-                Contacto
-              </a>
-            </li>
-            <li>
-              <Link to={"resultados"}>Resultados</Link>
-            </li>
-          </ul>
-        </nav>
+				<nav className="navigationContainer">
+					<ul>
+						<li>
+							<a href="#">Inicio</a>
+						</li>
+						<li>
+							<a onClick={() => ecografiasRef.current.scrollIntoView()}>
+								Ecografias
+							</a>
+						</li>
+						<li>
+							<a onClick={() => sucursalesRef.current.scrollIntoView()}>
+								Sucursales
+							</a>
+						</li>
+						<li>
+							<a onClick={() => contactoRef.current.scrollIntoView()}>
+								Contacto
+							</a>
+						</li>
+						<li>
+							<Link to={"resultados"}>Resultados</Link>
+						</li>
+					</ul>
+				</nav>
 
-        <div className="buttonContainer" onClick={() => setToggle(true)}>
-          <FaCalendarAlt className="calendarIcon" />
-          <button>
-            <FaCalendarAlt />
-            Agenda tu hora
-          </button>
-        </div>
-      </div>
-    </HeaderStyled>
-  );
+				<div className="buttonContainer" onClick={() => setToggle(true)}>
+					<FaCalendarAlt className="calendarIcon" />
+					<button>
+						<FaCalendarAlt />
+						Agenda tu hora
+					</button>
+				</div>
+			</div>
+		</HeaderStyled>
+	);
 };
 
 const HeaderStyled = styled.header`
-  width: 100%;
-  height: 6.25rem;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* gap: 3rem; */
-  z-index: 2;
-  /* padding-inline: 1rem; */
+	width: 100%;
+	height: 4rem;
+	background-color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	/* gap: 3rem; */
+	z-index: 1;
+	/* padding-inline: 1rem; */
 
-  .flexContainer {
-    width: 100%;
-    height: 100%;
-    /* border: solid; */
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    /* background-color: green; */
+	.flexContainer {
+		width: 100%;
+		height: 100%;
+		/* border: solid; */
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		align-items: center;
+		/* background-color: green; */
 
-    .toggleBtn {
-      display: none;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
+		.toggleBtn {
+			display: none;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
 
-      .menuIcon {
-        font-size: 3rem;
-        color: var(--color-primary);
-        /* background-color:red; */
-      }
+			.menuIcon {
+				font-size: 3rem;
+				color: var(--color-primary);
+				/* background-color:red; */
+			}
 
-      @media (max-width: ${md}) {
-        display: inline;
-      }
-    }
+			@media (max-width: ${md}) {
+				display: inline;
+			}
+		}
 
-    .logoContainer {
-      img {
-        /* display: none; */
-        width: min(40vw, 200px);
-        /* border: solid blue; */
-      }
-    }
+		.logoContainer {
+			img {
+				/* display: none; */
+				width: min(40vw, 150px);
+				/* border: solid blue; */
+			}
+		}
 
-    .navigationContainer {
-      height: 100%;
+		.navigationContainer {
+			height: 100%;
 
-      @media (max-width: ${md}) {
-        border: none;
-        order: 1;
-        height: auto;
-      }
+			@media (max-width: ${md}) {
+				border: none;
+				order: 1;
+				height: auto;
+			}
 
-      ul {
-        height: 100%;
-        background-color: #ffffff;
-        display: flex;
-        gap: 1rem;
-        transition: height 0.2s ease;
-        border: none;
-        /* justify-content: center; */
-        /* align-items: center; */
+			ul {
+				height: 100%;
+				background-color: #ffffff;
+				display: flex;
+				gap: 1rem;
+				transition: height 0.2s ease;
+				border: none;
+				/* justify-content: center; */
+				/* align-items: center; */
 
-        li {
-          height: 100%;
-          /* border:solid; */
-          text-align: center;
-          padding: 0.5rem;
+				li {
+					height: 100%;
+					/* border:solid; */
+					text-align: center;
+					padding: 0.5rem;
 
-          :hover {
-            background-color: #e1e2e779;
-          }
+					:hover {
+						background-color: #e1e2e779;
+					}
 
-          a {
-            display: block;
-            color: var(--color-primary);
-            font-weight: var(--fw-medium);
-            width: 100%;
-            height: 100%;
-            /* background-color:red; */
-            display: grid;
-            place-content: center;
-            cursor: pointer;
-          }
-        }
+					a {
+						display: block;
+						color: var(--color-primary);
+						font-weight: var(--fw-medium);
+						width: 100%;
+						height: 100%;
+						/* background-color:red; */
+						display: grid;
+						place-content: center;
+						cursor: pointer;
+					}
+				}
 
-        @media (max-width: ${md}) {
-          height: ${(props) => (props.show ? "40vh" : "0")};
-          overflow: hidden;
-        }
-      }
-    }
+				@media (max-width: ${md}) {
+					height: ${(props) => (props.show ? "40vh" : "0")};
+					overflow: hidden;
+				}
+			}
+		}
 
-    .buttonContainer {
-      /* border: solid; */
-      height: 100%;
-      display: grid;
-      place-items: center;
+		.buttonContainer {
+			/* border: solid; */
+			height: 100%;
+			display: grid;
+			place-items: center;
 
-      .calendarIcon {
-        display: none;
-      }
+			.calendarIcon {
+				display: none;
+			}
 
-      button {
-        border: none;
-        border-radius: 0.3rem;
-        background-color: var(--color-primary);
-        padding: 0.8rem;
-        color: white;
-        display: flex;
-        gap: 1rem;
-        cursor: pointer;
-      }
+			button {
+				border: none;
+				border-radius: 0.3rem;
+				background-color: var(--color-primary);
+				padding: 0.8rem;
+				color: white;
+				display: flex;
+				gap: 1rem;
+				cursor: pointer;
+			}
 
-      @media (max-width: ${lg}) {
-        /* background-color:red; */
-        button {
-          display: none;
-        }
+			@media (max-width: ${lg}) {
+				/* background-color:red; */
+				button {
+					display: none;
+				}
 
-        .calendarIcon {
-          display: block;
-          color: var(--color-primary);
-          font-size: 2.5rem;
-        }
-      }
-    }
+				.calendarIcon {
+					display: block;
+					color: var(--color-primary);
+					font-size: 2.5rem;
+				}
+			}
+		}
 
-    @media (max-width: ${md}) {
-      flex-flow: row wrap;
-      .navigationContainer {
-        display: block;
-        width: 100%;
+		@media (max-width: ${md}) {
+			flex-flow: row wrap;
+			.navigationContainer {
+				display: block;
+				width: 100%;
 
-        ul {
-          flex-flow: column;
+				ul {
+					flex-flow: column;
 
-          gap: 0;
-          a {
-            padding: 0.2rem;
-          }
-        }
-      }
-    }
-  }
+					gap: 0;
+					a {
+						padding: 0.2rem;
+					}
+				}
+			}
+		}
+	}
 `;
-
-const NavStyled = styled.nav``;
 
 export default Header;
