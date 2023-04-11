@@ -101,7 +101,6 @@ const LoginResultados = () => {
 };
 
 const Container = styled.div`
-	height: 100%;
 	min-height: calc(100dvh - 6rem);
 	background-color: #f2f2f2;
 `;
