@@ -11,7 +11,7 @@ import { useLoaderContext } from "../contexts/LoaderContext";
 
 const LoginResultados = () => {
 	const [showLoader, setShowLoader] = useLoaderContext();
-	const [inputsValues, setInputsValues] = useState({ id: "", codigo: "" });
+	const [inputsValues, setInputsValues] = useState({ id: "", code: "" });
 	const [patient, setPatient] = useState(null);
 	const [showHelpText, setShowHelpText] = useState(false);
 
@@ -26,16 +26,16 @@ const LoginResultados = () => {
 			setShowLoader(true);
 			const user = await getPacientData(inputsValues.id);
 
-			if (user.exists() && user.data().codigo === inputsValues.codigo) {
+			if (user.exists() && user.data().code === inputsValues.code) {
 				setShowLoader(false);
 
 				setPatient(user.data());
-				setInputsValues({ id: "", codigo: "" });
+				setInputsValues({ id: "", code: "" });
 				setShowHelpText(false);
 			} else {
 				setShowLoader(false);
 				setShowHelpText(true);
-				setInputsValues({ id: "", codigo: "" });
+				setInputsValues({ id: "", code: "" });
 			}
 		} catch (error) {
 			console.log(error);
@@ -73,9 +73,9 @@ const LoginResultados = () => {
 							required
 							type="text"
 							placeholder="Codigo de 6 digitos"
-							value={inputsValues.codigo}
-							name="codigo"
-							id="codigo"
+							value={inputsValues.code}
+							name="code"
+							id="code"
 							onChange={handleOnChange}
 							autoComplete="off"
 							minLength={6}

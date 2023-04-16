@@ -13,12 +13,13 @@ const PerfilPaciente = ({ patient }) => {
 	const [showLoader, setShowLoader] = useLoaderContext();
 	const [showModalExpediente, setShowModalExpediente] = useState(false);
 
-	const handleDownload = async (expediente) => {
+	const handleDownload = async (report) => {
 		const zip = new JSZip();
 
 		try {
 			setShowLoader(true);
-			const arrBlobs = await getBlobsFromExpedient(expediente);
+			const arrBlobs = await getBlobsFromExpedient(report);
+
 			arrBlobs.forEach(({ blob, metadata }) => zip.file(metadata.name, blob));
 			setShowLoader(false);
 		} catch (error) {
@@ -27,7 +28,7 @@ const PerfilPaciente = ({ patient }) => {
 
 		zip
 			.generateAsync({ type: "blob" })
-			.then((content) => saveAs(content, `resultados-${expediente.fecha}.zip`));
+			.then((content) => saveAs(content, `resultados-${report.createdAt}.zip`));
 	};
 
 	return (
@@ -41,28 +42,46 @@ const PerfilPaciente = ({ patient }) => {
 			<Container>
 				<div style={{ maxWidth: "1200px", margin: "0 auto" }}>
 					<TextContainer>
-						<span>Nombre: {patient.nombre.slice(0,1).toUpperCase() + patient.nombre.slice(1)}</span>
-						<span>Apellido: {patient.apellido.slice(0,1).toUpperCase() + patient.apellido.slice(1)}</span>
+						<h2 style={{ textAlign: "center", margin: "1rem" }}>
+							Datos personales
+						</h2>
 						<span>Identificacion: {patient.id}</span>
+						<span>
+							Nombre:{" "}
+							{patient.name.slice(0, 1).toUpperCase() + patient.name.slice(1)}
+						</span>
+						<span>
+							Segundo nombre:{" "}
+							{patient.secondName.slice(0, 1).toUpperCase() +
+								patient.secondName.slice(1)}
+						</span>
+						<span>
+							Apellido:{" "}
+							{patient.surname.slice(0, 1).toUpperCase() +
+								patient.surname.slice(1)}
+						</span>
+						<span>
+							Segundo apellido:{" "}
+							{patient.secondSurname.slice(0, 1).toUpperCase() +
+								patient.secondSurname.slice(1)}
+						</span>
 					</TextContainer>
 
 					<ResultsContainer>
 						<Title>Mis resultados</Title>
 
 						<RowsContainer>
-							{patient.expedientes.map((expediente, index) => (
+							{patient.reports.map((report, index) => (
 								<Row key={index}>
 									<FolderIcon />
-									<span style={{fontWeight: 600}}>{expediente.fecha}</span>
+									<span style={{ fontWeight: 500 }}>{report.createdAt}</span>
 									<ActionsContainer>
-										<ActionBtn
-											onClick={() => setShowModalExpediente(expediente)}
-										>
+										<ActionBtn onClick={() => setShowModalExpediente(report)}>
 											<SeeFolderIcon />
 											ver
 										</ActionBtn>
 
-										<ActionBtn onClick={() => handleDownload(expediente)}>
+										<ActionBtn onClick={() => handleDownload(report)}>
 											<DownloadFolderIcon />
 											descargar
 										</ActionBtn>

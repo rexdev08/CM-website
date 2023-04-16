@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
-const Carousel = ({ imagenes, indexProp, setIndexProp }) => {
+const Carousel = ({ images, indexProp, setIndexProp }) => {
 	const [imageIndex, setImageIndex] = useState(indexProp);
 
 	return (
 		<Overlay>
 			<CloseBtn onClick={() => setIndexProp(null)}>X</CloseBtn>
 			<ImageContainer>
-				<Image src={imagenes[imageIndex]} alt="imagen" />
+				<Image src={images[imageIndex].url} alt="imagen" />
 
-				{imagenes.length > 1 && (
+				{images.length > 1 && (
 					<>
 						<NextBtn
 							onClick={() => {
 								if (imageIndex > 0) {
 									setImageIndex(imageIndex - 1);
 								} else {
-									setImageIndex(imagenes.length - 1);
+									setImageIndex(images.length - 1);
 								}
 							}}
 						>
@@ -29,7 +29,7 @@ const Carousel = ({ imagenes, indexProp, setIndexProp }) => {
 
 						<PrevBtn
 							onClick={() => {
-								if (imageIndex < imagenes.length - 1) {
+								if (imageIndex < images.length - 1) {
 									setImageIndex(imageIndex + 1);
 								} else {
 									setImageIndex(0);
@@ -52,14 +52,9 @@ const Overlay = styled.div`
 	top: 0;
 	right: 0;
 	width: 100%;
-	height: 100vh;
-
+	height: 100dvh;
 	display: grid;
-
-	justify-content: center;
-	justify-items: center;
-	align-content: center;
-	align-items: center;
+	place-content: center;
 `;
 
 const ImageContainer = styled.div`
@@ -73,7 +68,7 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-	width: 100%;
+	max-height: 600px;
 	object-fit: contain;
 `;
 

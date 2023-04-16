@@ -34,26 +34,26 @@ export const getPacientData = async (id) => {
 
 //getImagesBlob
 
-export const getBlobsFromExpedient = async (expediente) => {
+export const getBlobsFromExpedient = async (report) => {
 	let tempImagenes;
 	let tempDocs;
 
-	if (expediente.imagenes.length > 0) {
+	if (report.images.length > 0) {
 	}
 	tempImagenes = await Promise.all(
-		expediente.imagenes.map(async (img) => {
-			const httpsReference = ref(storage, img);
+		report.images.map(async (img) => {
+			const httpsReference = ref(storage, img.url);
 			const blob = await getBlob(httpsReference);
 			const metadata = await getMetadata(httpsReference);
 			return { blob, metadata };
 		})
 	);
 
-	if (expediente.docs.length > 0) {
+	if (report.docs.length > 0) {
 	}
 	tempDocs = await Promise.all(
-		expediente.docs.map(async (doc) => {
-			const httpsReference = ref(storage, doc);
+		report.docs.map(async (doc) => {
+			const httpsReference = ref(storage, doc.url);
 			const blob = await getBlob(httpsReference);
 			const metadata = await getMetadata(httpsReference);
 			return { blob, metadata };
