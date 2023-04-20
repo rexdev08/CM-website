@@ -71,11 +71,13 @@ const Contacto = () => {
 const ContactoStyled = styled.section`
 	/* background-color: var(--color-fifth); */
 	scroll-margin-top: 4rem;
+	min-height: calc(100dvh - 4rem);
 	width: 100%;
 	color: var(--color-primary);
 	text-align: center;
 	padding: 2rem 1rem;
 	background-color: #f6f9f9;
+
 
 	.titleContainer {
 		/* border:solid; */
