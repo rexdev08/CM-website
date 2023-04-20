@@ -44,6 +44,7 @@ const Navigation = styled.nav`
 	width: 100%;
 	max-width: ${lg};
 	height: 100%;
+	
 	/* background-color: blue; */
 `;
 const List = styled.ul`

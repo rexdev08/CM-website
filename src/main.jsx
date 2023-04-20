@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 
 //react-router-dom
 import { RouterProvider } from "react-router-dom";
-import { createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 //pages
 import Root from "./pages/Root";
@@ -17,7 +17,7 @@ import LoaderScreen from "./components/LoaderScreen";
 import { LoaderContextProvider } from "./contexts/LoaderContext";
 
 //router
-const router = createHashRouter([
+const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Root />,

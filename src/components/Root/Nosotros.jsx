@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { sm, md, xl } from "../../breakpoints";
 import consultorio from "../../assets/consultorio.png";
 
-const Nosotros = ({ setToggle, ecografiasRef }) => {
+const Nosotros = ({ setToggle }) => {
 	return (
 		<Container>
 			<div className="container lg">
@@ -32,7 +32,7 @@ const Nosotros = ({ setToggle, ecografiasRef }) => {
 					<button onClick={() => setToggle(true)}>Agenda tu hora</button>
 				</div>
 
-				<div className="item item3" ref={ecografiasRef}>
+				<div className="item item3" id="ecografias">
 					<h2>Tipos de ecografías</h2>
 					<hr />
 					<p>
@@ -263,7 +263,7 @@ const Container = styled.section`
 
 			.imageContainer {
 				img {
-					border-radius: .5rem;
+					border-radius: 0.5rem;
 					object-fit: contain;
 				}
 			}
@@ -300,7 +300,7 @@ const Container = styled.section`
 			background-color: var(--color-primary);
 			color: white;
 			padding: 1rem;
-			border-radius: .5rem;
+			border-radius: 0.5rem;
 			gap: 1rem;
 			display: flex;
 			flex-flow: row wrap;
@@ -309,8 +309,8 @@ const Container = styled.section`
 
 			button {
 				border: none;
-				border-radius: .3rem;
-				padding: .7rem;
+				border-radius: 0.3rem;
+				padding: 0.7rem;
 				background-color: var(--color-fourth);
 				color: white;
 				transition: color 0.2s ease-in-out, background-color ease-in-out 0.2s;
@@ -357,7 +357,6 @@ const Ecografias = styled.div`
 	/* border: solid pink; */
 
 	.tile {
-
 		height: 100%;
 		border-bottom: solid var(--color-primary) 0.2rem;
 		border-radius: 0.5rem;

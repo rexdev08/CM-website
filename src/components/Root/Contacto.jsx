@@ -5,9 +5,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
-const Contacto = ({ contactoRef }) => {
+const Contacto = () => {
 	return (
-		<ContactoStyled ref={contactoRef}>
+		<ContactoStyled id="contacto">
 			<div className="gridContainer sm">
 				<div className="titleContainer lg">
 					<h2>Contacto</h2>

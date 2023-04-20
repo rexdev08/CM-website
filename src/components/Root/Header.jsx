@@ -9,7 +9,7 @@ import { IoClose } from "react-icons/io5";
 
 // import { TfiMenu } from "react-icons/tfi";
 
-const Header = ({ setToggle, ecografiasRef, sucursalesRef, contactoRef }) => {
+const Header = ({ setToggle }) => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 
 	return (
@@ -33,20 +33,22 @@ const Header = ({ setToggle, ecografiasRef, sucursalesRef, contactoRef }) => {
 				<nav className="navigationContainer">
 					<ul>
 						<li>
-							<a href="#">Inicio</a>
+							<a onClick={() => setToggleMenu(false)} href="#">
+								Inicio
+							</a>
 						</li>
 						<li>
-							<a onClick={() => ecografiasRef.current.scrollIntoView()}>
+							<a onClick={() => setToggleMenu(false)} href="#ecografias">
 								Ecografias
 							</a>
 						</li>
 						<li>
-							<a onClick={() => sucursalesRef.current.scrollIntoView()}>
+							<a onClick={() => setToggleMenu(false)} href="#sucursales">
 								Sucursales
 							</a>
 						</li>
 						<li>
-							<a onClick={() => contactoRef.current.scrollIntoView()}>
+							<a onClick={() => setToggleMenu(false)} href="#contacto">
 								Contacto
 							</a>
 						</li>

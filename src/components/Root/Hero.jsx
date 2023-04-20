@@ -3,7 +3,7 @@ import { md } from "../../breakpoints";
 import logoBlanco from "../../assets/logo-transparente-blanco.png";
 import { FaArrowRight } from "react-icons/fa";
 
-const Hero = ({ CMDeLaTorreref, CMSanMateoRef }) => {
+const Hero = () => {
 	return (
 		<HeroStyled>
 			<div className="gridContainer lg">
@@ -18,11 +18,11 @@ const Hero = ({ CMDeLaTorreref, CMSanMateoRef }) => {
 						<h2>Agenda tu hora</h2>
 						<hr />
 						<div className="buttonsContainer">
-							<a onClick={() => CMDeLaTorreref.current.scrollIntoView()}>
+							<a href="#CMDeLaTorreref">
 								<FaArrowRight className="arrow" />
 								En Linares
 							</a>
-							<a onClick={() => CMSanMateoRef.current.scrollIntoView()}>
+							<a href="#CMSanMateoRef">
 								<FaArrowRight className="arrow" />
 								En Colbun
 							</a>

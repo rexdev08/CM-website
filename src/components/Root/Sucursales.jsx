@@ -5,16 +5,16 @@ import centroMedico2 from "../../assets/san-mateo-frontal.webp";
 import { FaClock } from "react-icons/fa";
 import { FaMapMarkedAlt } from "react-icons/fa";
 
-const Sucursales = ({ sucursalesRef, CMDeLaTorreref, CMSanMateoRef }) => {
+const Sucursales = () => {
 	return (
-		<Container ref={sucursalesRef}>
+		<Container id="sucursales">
 			<div className="titleContainer lg">
 				<h2>Sucursales</h2>
 				<hr />
 			</div>
 
 			<div className="gridContainer lg">
-				<div className="item item1" ref={CMDeLaTorreref}>
+				<div className="item item1" id="CMDeLaTorreref">
 					<h4>Linares - Centro Médico DeLatorre</h4>
 					<div>
 						<img src={centroMedico} alt="" />
@@ -51,7 +51,7 @@ const Sucursales = ({ sucursalesRef, CMDeLaTorreref, CMSanMateoRef }) => {
 						CÓMO LLEGAR
 					</a>
 				</div>
-				<div className="item item2" ref={CMSanMateoRef}>
+				<div className="item item2" id="CMSanMateoRef">
 					<h4>Colbún - Clínica San Mateo</h4>
 					<div>
 						<img src={centroMedico2} alt="" />

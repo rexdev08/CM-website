@@ -63,20 +63,20 @@ html{
   scroll-behavior:smooth ;
 }
 
-//scroll-bar
+/* //scroll-bar
 ::-webkit-scrollbar{
   background-color:var(--color-primary);
   
-}
+} */
 
-::-webkit-scrollbar-thumb{
+/* ::-webkit-scrollbar-thumb{
   background-color:white;
   border:solid;
   border-radius:.5rem;
   :hover{
     background-color: whitesmoke;
   }
-}
+} */
 
 //headings
 h1{
